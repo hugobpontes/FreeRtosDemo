@@ -1,0 +1,3 @@
+[submodule "FreeRTOS-Kernel_STM32F7x"]
+	path = FreeRTOS-Kernel_STM32F7x
+	url = https://github.com/hugobpontes/FreeRTOS-Kernel_STM32F7x
