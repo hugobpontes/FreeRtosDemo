@@ -44,14 +44,15 @@ static void TraceTask(void* pvParams);
 TIM_HandleTypeDef htim1;
 
 UART_HandleTypeDef huart2;
-static TaskHandle_t pRedTask;
-static TaskHandle_t pBlueTask;
-static TaskHandle_t pTraceTask;
+static TaskHandle_t hRedTask;
+static TaskHandle_t hBlueTask;
+static TaskHandle_t hTraceTask;
 
 /**
   * @brief  The application entry point.
   * @retval int
   */
+
 
 int main(void)
 {
@@ -64,9 +65,9 @@ int main(void)
 
   TriceInit();
 
-  xTaskCreate(BlinkBlueTask, "BlinkBlue", 128, NULL, 2, &pBlueTask);
-  xTaskCreate(BlinkRedTask, "BlinkRed", 128, NULL, 2, &pRedTask);
-  xTaskCreate(TraceTask, "Trace", 128, NULL, 1, &pTraceTask);
+  xTaskCreate(BlinkBlueTask, "BlinkBlue", 128, NULL, 2, &hBlueTask);
+  //xTaskCreate(BlinkRedTask, "BlinkRed", 128, NULL, 2, &hRedTask);
+  xTaskCreate(TraceTask, "Trace", 128, NULL, 1, &hTraceTask);
   vTaskStartScheduler();
 
 }
@@ -75,7 +76,7 @@ void BlinkBlueTask(void* pvParams){
 	while (1)
 	{
 		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
-		TRICE( ID(2104), "Toggling Blue\n" );
+		TRICE( ID(3257), "INFO: Toggling Blue\n" );
 		vTaskDelay(1000);
 	}
 }
@@ -84,8 +85,8 @@ void BlinkRedTask(void* pvParams){
 	while (1)
 	{
 	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
-	  TRICE( ID(3947), "Toggling Red\n" );
-	  vTaskDelay(100);
+	  TRICE( ID(5580), "INFO: Toggling Red\n" );
+	  vTaskDelay(50);
 	}
 }
 
@@ -96,7 +97,7 @@ void TraceTask(void* pvParams){
 		if (TriceOutDepthUartA()){
 			triceServeTransmitUartA();
 		}
-
+		//HAL_Delay(1);
 	}
 }
 /**

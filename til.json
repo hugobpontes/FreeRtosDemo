@@ -3,32 +3,92 @@
 		"Type": "trice",
 		"Strg": "\\n\\n        ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨        \\n        🎈🎈🎈🎈  𝕹𝖀𝕮𝕷𝕰𝕺-L432KC   🎈🎈🎈🎈\\n        🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃        \\n\\n\\n"
 	},
+	"1473": {
+		"Type": "TRICE",
+		"Strg": "Before HAL_Delay \\n"
+	},
+	"1510": {
+		"Type": "TRICE_S",
+		"Strg": "SIGNAL: Switching in %c%c%c%c%c\\n"
+	},
 	"2104": {
 		"Type": "TRICE",
 		"Strg": "Toggling Blue\\n"
+	},
+	"2455": {
+		"Type": "TRICE",
+		"Strg": "SIGNAL: Switching in\\n"
 	},
 	"3170": {
 		"Type": "trice",
 		"Strg": "Toggling Red\\n"
 	},
+	"3257": {
+		"Type": "TRICE",
+		"Strg": "INFO: Toggling Blue\\n"
+	},
+	"3269": {
+		"Type": "TRICE",
+		"Strg": "SIGNAL: Switching in\\n"
+	},
+	"3789": {
+		"Type": "TRICE",
+		"Strg": "SIGNAL: Switching in %c%c%c%c%c\\n"
+	},
 	"3947": {
 		"Type": "TRICE",
 		"Strg": "Toggling Red\\n"
+	},
+	"4313": {
+		"Type": "TRICE",
+		"Strg": "After HAL_Delay \\n"
+	},
+	"4348": {
+		"Type": "TRICE_S",
+		"Strg": "SIGNAL: Switching in %s\\n"
 	},
 	"4677": {
 		"Type": "trice",
 		"Strg": "%Hello: d\\n"
 	},
+	"5241": {
+		"Type": "TRICE_S",
+		"Strg": "SIGNAL: Switching in %s\\n"
+	},
+	"5302": {
+		"Type": "TRICE",
+		"Strg": "Entering Task [%d]\\n"
+	},
 	"5491": {
 		"Type": "trice",
 		"Strg": "Hello: %d\\n"
+	},
+	"5580": {
+		"Type": "TRICE",
+		"Strg": "INFO: Toggling Red\\n"
 	},
 	"5877": {
 		"Type": "trice",
 		"Strg": "Hello! \\n"
 	},
+	"6429": {
+		"Type": "TRICE_S",
+		"Strg": "SIGNAL: Switching in %s\\n"
+	},
+	"6507": {
+		"Type": "TRICE",
+		"Strg": "Switching in\\n"
+	},
 	"6564": {
 		"Type": "trice",
 		"Strg": "Toggling Blue\\n"
+	},
+	"6582": {
+		"Type": "TRICE",
+		"Strg": "SIGNAL: Switching in %s\\n"
+	},
+	"7129": {
+		"Type": "TRICE",
+		"Strg": "Switching in"
 	}
 }

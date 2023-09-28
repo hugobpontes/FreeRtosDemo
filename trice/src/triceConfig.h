@@ -48,14 +48,14 @@ extern "C" {
 //! - In direct mode, and also when you enabled TRICE_SEGGER_RTT_8BIT_DEFERRED_WRITE, this plus TRICE_DATA_OFFSET is the max allocation size on the target stack with TRICE_BUFFER == TRICE_STACK_BUFFER.
 //! - When short of RAM and, for example, max 2 32-bit values with a 32-bit stamp are used, the max trice size is 2 + 4 + 2 + 2*4 = 16 bytes.
 //! - You should then also disable all then forbidden trices to avoid mistakes. Example: `#define ENABLE_TRice32fn_3 0` and so on at the end of this file.
-#define TRICE_SINGLE_MAX_SIZE 128 // must be a multiple of 4
+#define TRICE_SINGLE_MAX_SIZE 256 // must be a multiple of 4
 
 //! TRICE_DEFERRED_BUFFER_SIZE needs to be capable to hold trice bursts until they are transmitted.
 //! When TRICE_BUFFER == TRICE_STACK_BUFFER this value is not used.
 //! When TRICE_BUFFER == TRICE_STATIC_BUFFER this value is not used.
 //! When TRICE_BUFFER == TRICE_DOUBLE_BUFFER, this is the sum of both half buffers.
 //! When TRICE_BUFFER == TRICE_RING_BUFFER, this is the whole buffer.
-#define TRICE_DEFERRED_BUFFER_SIZE 0x200 // must be a multiple of 4
+#define TRICE_DEFERRED_BUFFER_SIZE 1024 // must be a multiple of 4
 
 //! TRICE_MCU_IS_BIG_ENDIAN needs to be defined for TRICE64 macros on big endian MCUs for correct 64-bit values and 32-bit timestamp encoding-
 //#define TRICE_MCU_IS_BIG_ENDIAN
@@ -153,7 +153,6 @@ TRICE_INLINE void triceTransmitData8UartA(uint8_t v) {
 	extern UART_HandleTypeDef huart2;
 
 	HAL_UART_Transmit(&huart2, &v,1, 100);
-	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
 }
 
 //! Allow interrupt for empty trice data transmit register.

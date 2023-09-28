@@ -563,7 +563,11 @@
 
 /* Called after a task has been selected to run.  pxCurrentTCB holds a pointer
  * to the task control block of the selected task. */
-    #define traceTASK_SWITCHED_IN()
+	//#define traceTASK_SWITCHED_IN()
+    #define traceTASK_SWITCHED_IN() {\
+		extern void TriceTaskSwitchIn(TaskHandle_t);\
+		TriceTaskSwitchIn(xTaskGetCurrentTaskHandle());\
+       }
 #endif
 
 #ifndef traceINCREASE_TICK_COUNT

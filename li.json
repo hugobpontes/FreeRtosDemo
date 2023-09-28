@@ -3,12 +3,16 @@
 		"File": "triceConfig.h",
 		"Line": 102
 	},
-	"2104": {
+	"3257": {
 		"File": "main.c",
-		"Line": 78
+		"Line": 79
 	},
-	"3947": {
+	"5302": {
+		"File": "TriceTaskCallbacks.c",
+		"Line": 15
+	},
+	"5580": {
 		"File": "main.c",
-		"Line": 87
+		"Line": 88
 	}
 }
