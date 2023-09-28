@@ -64,8 +64,8 @@ int main(void)
 
   TriceInit();
 
-  xTaskCreate(BlinkBlueTask, "BlinkBlue", 128, NULL, 1, &pBlueTask);
-  xTaskCreate(BlinkRedTask, "BlinkRed", 128, NULL, 1, &pRedTask);
+  xTaskCreate(BlinkBlueTask, "BlinkBlue", 128, NULL, 2, &pBlueTask);
+  xTaskCreate(BlinkRedTask, "BlinkRed", 128, NULL, 2, &pRedTask);
   xTaskCreate(TraceTask, "Trace", 128, NULL, 1, &pTraceTask);
   vTaskStartScheduler();
 
@@ -75,8 +75,8 @@ void BlinkBlueTask(void* pvParams){
 	while (1)
 	{
 		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
-		trice( iD(6564), "Toggling Blue\n" );
-		HAL_Delay(1000);
+		TRICE( ID(2104), "Toggling Blue\n" );
+		vTaskDelay(1000);
 	}
 }
 
@@ -84,8 +84,8 @@ void BlinkRedTask(void* pvParams){
 	while (1)
 	{
 	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
-	  trice( iD(3170), "Toggling Red\n" );
-	  HAL_Delay(100);
+	  TRICE( ID(3947), "Toggling Red\n" );
+	  vTaskDelay(100);
 	}
 }
 
