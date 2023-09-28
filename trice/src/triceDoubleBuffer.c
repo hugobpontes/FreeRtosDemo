@@ -2,6 +2,7 @@
 //! \author Thomas.Hoehenleitner [at] seerose.net
 //! //////////////////////////////////////////////////////////////////////////
 #include "trice.h"
+#include "triceConfig.h"
 
 #if TRICE_BUFFER == TRICE_DOUBLE_BUFFER
 

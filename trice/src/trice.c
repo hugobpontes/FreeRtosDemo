@@ -6,6 +6,7 @@
 #include "tcobs.h"
 #include "cobs.h"
 #include "xtea.h"
+#include "triceConfig.h"
 
 //lint -e550 Warning 550: Symbol 'TriceErrorCount' (line 40, file ..\..\..\src\trice.c) not accessed
 //lint -e438 Warning 438: Last value assigned to variable 'TriceErrorCount' 'triceCommandFlag' not used

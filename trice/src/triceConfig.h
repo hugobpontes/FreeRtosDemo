@@ -99,7 +99,7 @@ extern "C" {
 
 //! This is usable as the very first trice sequence after restart. Adapt it. Use a UTF-8 capable editor like VS-Code or use pure ASCII.
 #define TRICE_HEADLINE \
-    trice( "\n\n        ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨        \n        🎈🎈🎈🎈  𝕹𝖀𝕮𝕷𝕰𝕺-L432KC   🎈🎈🎈🎈\n        🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃        \n\n\n");
+    trice( iD(1031), "\n\n        ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨        \n        🎈🎈🎈🎈  𝕹𝖀𝕮𝕷𝕰𝕺-L432KC   🎈🎈🎈🎈\n        🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃        \n\n\n");
 
 // Compiler Adaption:
 
@@ -141,7 +141,9 @@ TRICE_INLINE void ToggleOpticalFeedbackLED( void ){
 //! User must provide this function.
 TRICE_INLINE uint32_t triceTxDataRegisterEmptyUartA(void) {
    // return LL_USART_IsActiveFlag_TXE(TRICE_UARTA);
-	return USART2->ISR & (1<<7);
+	extern UART_HandleTypeDef huart2;
+
+	return __HAL_UART_GET_FLAG(&huart2, UART_FLAG_TXE);
 }
 
 //! Write value v into trice transmit register.

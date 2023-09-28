@@ -1,6 +1,14 @@
 {
-	"5877": {
+	"1031": {
+		"File": "triceConfig.h",
+		"Line": 102
+	},
+	"3170": {
 		"File": "main.c",
-		"Line": 53
+		"Line": 83
+	},
+	"6564": {
+		"File": "main.c",
+		"Line": 74
 	}
 }

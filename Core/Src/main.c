@@ -31,6 +31,8 @@ static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
 static void BlinkBlueTask(void* pvParams);
 static void BlinkRedTask(void* pvParams);
+static void TraceTask(void* pvParams);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -44,6 +46,7 @@ TIM_HandleTypeDef htim1;
 UART_HandleTypeDef huart2;
 static TaskHandle_t pRedTask;
 static TaskHandle_t pBlueTask;
+static TaskHandle_t pTraceTask;
 
 /**
   * @brief  The application entry point.
@@ -59,8 +62,11 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM1_Init();
 
+  TriceInit();
+
   xTaskCreate(BlinkBlueTask, "BlinkBlue", 128, NULL, 1, &pBlueTask);
   xTaskCreate(BlinkRedTask, "BlinkRed", 128, NULL, 1, &pRedTask);
+  xTaskCreate(TraceTask, "Trace", 128, NULL, 1, &pTraceTask);
   vTaskStartScheduler();
 
 }
@@ -68,12 +74,9 @@ int main(void)
 void BlinkBlueTask(void* pvParams){
 	while (1)
 	{
-	//  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
-		trice( iD(5877), "Hello! \n" );
-		uint8_t c = 0xAB;
-		//HAL_UART_Transmit(&huart2, &c, 1,100);
-
-	  HAL_Delay(1000);
+		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+		trice( iD(6564), "Toggling Blue\n" );
+		HAL_Delay(1000);
 	}
 }
 
@@ -81,7 +84,18 @@ void BlinkRedTask(void* pvParams){
 	while (1)
 	{
 	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
-	  HAL_Delay(250);
+	  trice( iD(3170), "Toggling Red\n" );
+	  HAL_Delay(100);
+	}
+}
+
+void TraceTask(void* pvParams){
+	while (1)
+	{
+		TriceTransfer();
+		if (TriceOutDepthUartA()){
+			triceServeTransmitUartA();
+		}
 
 	}
 }
