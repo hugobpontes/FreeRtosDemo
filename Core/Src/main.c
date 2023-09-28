@@ -21,10 +21,13 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "custom_callbacks.h"
+#include "trice.h"
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
 static void BlinkBlueTask(void* pvParams);
 static void BlinkRedTask(void* pvParams);
@@ -34,6 +37,11 @@ static void BlinkRedTask(void* pvParams);
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
+/* Private variables ---------------------------------------------------------*/
+
+TIM_HandleTypeDef htim1;
+
+UART_HandleTypeDef huart2;
 static TaskHandle_t pRedTask;
 static TaskHandle_t pBlueTask;
 
@@ -41,12 +49,15 @@ static TaskHandle_t pBlueTask;
   * @brief  The application entry point.
   * @retval int
   */
+
 int main(void)
 {
 
   HAL_Init();
   SystemClock_Config();
   MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  MX_TIM1_Init();
 
   xTaskCreate(BlinkBlueTask, "BlinkBlue", 128, NULL, 1, &pBlueTask);
   xTaskCreate(BlinkRedTask, "BlinkRed", 128, NULL, 1, &pRedTask);
@@ -57,9 +68,12 @@ int main(void)
 void BlinkBlueTask(void* pvParams){
 	while (1)
 	{
-	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
-	  HAL_Delay(1000);
+	//  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+		trice( iD(5877), "Hello! \n" );
+		uint8_t c = 0xAB;
+		//HAL_UART_Transmit(&huart2, &c, 1,100);
 
+	  HAL_Delay(1000);
 	}
 }
 
@@ -71,7 +85,6 @@ void BlinkRedTask(void* pvParams){
 
 	}
 }
-
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -114,6 +127,88 @@ void SystemClock_Config(void)
 }
 
 /**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 0;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 65535;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
+
+}
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -125,6 +220,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
