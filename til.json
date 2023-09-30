@@ -31,6 +31,14 @@
 		"Type": "TRICE",
 		"Strg": "Toggling Blue\\n"
 	},
+	"2352": {
+		"Type": "TRICE",
+		"Strg": "Failed to create timer \\n"
+	},
+	"2431": {
+		"Type": "TRICE",
+		"Strg": "Failed to start timer \\n"
+	},
 	"2455": {
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in\\n"
@@ -178,6 +186,10 @@
 	"6699": {
 		"Type": "TRICE",
 		"Strg": "Failed ot create binary semaphore 1000"
+	},
+	"6996": {
+		"Type": "TRICE",
+		"Strg": "Failed to create binary semaphore \\n"
 	},
 	"7129": {
 		"Type": "TRICE",

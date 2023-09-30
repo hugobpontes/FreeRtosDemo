@@ -33,22 +33,30 @@ static void Tmr1000Callback( TimerHandle_t xTimer ){
 }
 
 
-void CommonInit(){
-	if ((hTmr1000 = xTimerCreateStatic("tmr1000",kTmr1000Ticks,
-						pdTRUE,(void *) 0,Tmr1000Callback,
-						&Tmr1000Buff)) == pdFAIL){
-		TRICE( ID(6056), "Failed to create timer 1000 \n");
-	} else {
-		if( xTimerStart( hTmr1000, 0 ) == pdFAIL )
-		{
-			TRICE( ID(1703), "Failed to start timer 1000 \n");
+static inline void InitAutoTimer(TimerHandle_t* phTmr,StaticTimer_t* pTmrBuff, TickType_t TmrPeriod,TimerCallbackFunction_t TmrCallback, char* TmrName){
+	if ((*phTmr = xTimerCreateStatic(TmrName,TmrPeriod,
+							pdTRUE,(void *) 0,TmrCallback,
+							pTmrBuff)) == pdFAIL){
+			TRICE( ID(2352), "Failed to create timer \n");
+		} else {
+			if( xTimerStart( *phTmr, 0 ) == pdFAIL )
+			{
+				TRICE( ID(2431), "Failed to start timer \n");
+			}
 		}
+}
+
+static inline void InitBinSemaphore(SemaphoreHandle_t* phSmph,StaticSemaphore_t* pSmphBuffer){
+	if ((*phSmph = xSemaphoreCreateBinaryStatic(pSmphBuffer)) == pdFAIL ){
+		TRICE( ID(6996), "Failed to create binary semaphore \n");
+	} else {
+		xSemaphoreTake(*phSmph,0);
 	}
 
-	if ((hBinSmph1000 = xSemaphoreCreateBinaryStatic(&BinSmph1000Buffer)) == pdFAIL ){
-		TRICE( ID(4568), "Failed to create binary semaphore 1000");
-	} else {
-		xSemaphoreTake(hBinSmph1000,0);
-	}
+}
+
+void CommonInit(){
+	InitAutoTimer(&hTmr1000,&Tmr1000Buff,kTmr1000Ticks,Tmr1000Callback,"Tmr1000");
+	InitBinSemaphore(&hBinSmph1000,&BinSmph1000Buffer);
 
 }
