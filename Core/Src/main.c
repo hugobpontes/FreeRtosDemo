@@ -20,8 +20,11 @@
 #include "main.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "custom_callbacks.h"
-#include "trice.h"
+
+#include "Task1000.h"
+#include "Task250.h"
+#include "Task500.h"
+#include "Trace.h"
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -29,9 +32,6 @@ static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
-static void BlinkBlueTask(void* pvParams);
-static void BlinkRedTask(void* pvParams);
-static void TraceTask(void* pvParams);
 
 /* USER CODE END PFP */
 
@@ -44,9 +44,6 @@ static void TraceTask(void* pvParams);
 TIM_HandleTypeDef htim1;
 
 UART_HandleTypeDef huart2;
-static TaskHandle_t hRedTask;
-static TaskHandle_t hBlueTask;
-static TaskHandle_t hTraceTask;
 
 /**
   * @brief  The application entry point.
@@ -63,47 +60,15 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM1_Init();
 
-  TriceInit();
+  TraceInit();
+  Task1000Init();
+  Task500Init();
+  Task250Init();
 
-  xTaskCreate(BlinkBlueTask, "BlinkBlue", 128, NULL, 2, &hBlueTask);
-  xTaskCreate(BlinkRedTask, "BlinkRed", 128, NULL, 2, &hRedTask);
-  xTaskCreate(TraceTask, "Trace", 128, NULL, 1, &hTraceTask);
   vTaskStartScheduler();
 
 }
 
-void BlinkBlueTask(void* pvParams){
-	while (1)
-	{
-		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
-		TRICE( ID(3257), "INFO: Toggling Blue\n" );
-		vTaskDelay(1000);
-	}
-}
-
-void BlinkRedTask(void* pvParams){
-	while (1)
-	{
-	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
-	  TRICE( ID(5580), "INFO: Toggling Red\n" );
-	  vTaskDelay(500);
-	}
-}
-
-void TraceTask(void* pvParams){
-	while (1)
-	{
-		TriceTransfer();
-		if (TriceOutDepthUartA()){
-			triceServeTransmitUartA();
-		}
-		//HAL_Delay(1);
-	}
-}
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};

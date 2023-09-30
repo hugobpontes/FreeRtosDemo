@@ -31,6 +31,10 @@
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in\\n"
 	},
+	"3626": {
+		"Type": "TRICE",
+		"Strg": "Task500 doing stuff\\n"
+	},
 	"3789": {
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in %c%c%c%c%c\\n"
@@ -50,6 +54,14 @@
 	"4677": {
 		"Type": "trice",
 		"Strg": "%Hello: d\\n"
+	},
+	"4714": {
+		"Type": "TRICE",
+		"Strg": "INFO:Task250 doing stuff\\n"
+	},
+	"4932": {
+		"Type": "TRICE",
+		"Strg": "INFO:Task1000 doing stuff\\n"
 	},
 	"5241": {
 		"Type": "TRICE_S",
@@ -79,6 +91,10 @@
 		"Type": "TRICE",
 		"Strg": "Switching in\\n"
 	},
+	"6535": {
+		"Type": "TRICE",
+		"Strg": "Task250 doing stuff"
+	},
 	"6564": {
 		"Type": "trice",
 		"Strg": "Toggling Blue\\n"
@@ -90,5 +106,13 @@
 	"7129": {
 		"Type": "TRICE",
 		"Strg": "Switching in"
+	},
+	"7181": {
+		"Type": "TRICE",
+		"Strg": "Task1000 doing stuff"
+	},
+	"7393": {
+		"Type": "TRICE",
+		"Strg": "INFO:Task500 doing stuff\\n"
 	}
 }
