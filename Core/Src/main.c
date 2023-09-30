@@ -64,8 +64,8 @@ int main(void)
 
   TraceInit();
   Task1000Init();
-  //Task500Init();
-  //Task250Init();
+  Task500Init();
+  Task250Init();
   CommonInit();
 
   vTaskStartScheduler();

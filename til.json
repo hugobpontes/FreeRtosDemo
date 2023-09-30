@@ -1,4 +1,8 @@
 {
+	"1008": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Could not take BinSmph1000 in %d \\n"
+	},
 	"1031": {
 		"Type": "trice",
 		"Strg": "\\n\\n        ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨        \\n        🎈🎈🎈🎈  𝕹𝖀𝕮𝕷𝕰𝕺-L432KC   🎈🎈🎈🎈\\n        🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃        \\n\\n\\n"
@@ -30,6 +34,10 @@
 	"2104": {
 		"Type": "TRICE",
 		"Strg": "Toggling Blue\\n"
+	},
+	"2150": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Did not receive tm500 flag in %d \\n"
 	},
 	"2352": {
 		"Type": "TRICE",
@@ -71,6 +79,10 @@
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in\\n"
 	},
+	"3296": {
+		"Type": "TRICE",
+		"Strg": "INFO: Received Tmr500 flag, doing stuff \\n"
+	},
 	"3312": {
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Tmr1000 Giving BinSmph1000 \\n"
@@ -83,9 +95,17 @@
 		"Type": "TRICE",
 		"Strg": "Hello from software timer \\n"
 	},
+	"3747": {
+		"Type": "TRICE",
+		"Strg": "INFO: Did not receive tm500 flag in %d \\n"
+	},
 	"3789": {
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in %c%c%c%c%c\\n"
+	},
+	"3799": {
+		"Type": "TRICE",
+		"Strg": "INFO: Waiting for Tmr250 flag for %d \\n"
 	},
 	"3947": {
 		"Type": "TRICE",
@@ -103,6 +123,10 @@
 		"Type": "TRICE_S",
 		"Strg": "SIGNAL: Switching in %s\\n"
 	},
+	"4434": {
+		"Type": "TRICE",
+		"Strg": "SIGNAL: Setting Tmr250 Event flag \\n"
+	},
 	"4568": {
 		"Type": "TRICE",
 		"Strg": "Failed to create binary semaphore 1000"
@@ -114,6 +138,10 @@
 	"4714": {
 		"Type": "TRICE",
 		"Strg": "INFO:Task250 doing stuff\\n"
+	},
+	"4726": {
+		"Type": "TRICE",
+		"Strg": "INFO: Waiting for Tmr500 flag for %d \\n"
 	},
 	"4812": {
 		"Type": "TRICE",
@@ -151,6 +179,10 @@
 		"Type": "TRICE",
 		"Strg": "INFO: Toggling Red\\n"
 	},
+	"5768": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Did not receive tm250 flag in %d \\n"
+	},
 	"5877": {
 		"Type": "trice",
 		"Strg": "Hello! \\n"
@@ -158,6 +190,10 @@
 	"6056": {
 		"Type": "TRICE",
 		"Strg": "Failed to create timer 1000 \\n"
+	},
+	"6178": {
+		"Type": "TRICE",
+		"Strg": "SIGNAL: Setting Tmr500 Event flag \\n"
 	},
 	"6257": {
 		"Type": "TRICE",
@@ -179,6 +215,10 @@
 		"Type": "trice",
 		"Strg": "Toggling Blue\\n"
 	},
+	"6568": {
+		"Type": "TRICE",
+		"Strg": "Failed to create event group \\n"
+	},
 	"6582": {
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in %s\\n"
@@ -199,9 +239,17 @@
 		"Type": "TRICE",
 		"Strg": "Task1000 doing stuff"
 	},
+	"7231": {
+		"Type": "TRICE",
+		"Strg": "INFO: Received Tmr250 flag, doing stuff \\n"
+	},
 	"7393": {
 		"Type": "TRICE",
 		"Strg": "INFO:Task500 doing stuff\\n"
+	},
+	"7623": {
+		"Type": "TRICE",
+		"Strg": "INFO: Did not receive tm250 flag in %d \\n"
 	},
 	"7825": {
 		"Type": "TRICE",
