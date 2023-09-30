@@ -40,6 +40,10 @@
  * See http://www.freertos.org/a00110.html
  *----------------------------------------------------------*/
 
+//Hugo Custom Start
+#define configSUPPORT_STATIC_ALLOCATION			1
+#define configKERNEL_PROVIDED_STATIC_MEMORY		1
+//Hugo Custom End
 #define configUSE_PREEMPTION					1
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION	1
 #define configUSE_QUEUE_SETS					1

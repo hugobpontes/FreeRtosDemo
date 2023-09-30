@@ -26,6 +26,8 @@
 #include "Task500.h"
 #include "Trace.h"
 
+#include "Common.h"
+
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -62,8 +64,9 @@ int main(void)
 
   TraceInit();
   Task1000Init();
-  Task500Init();
-  Task250Init();
+  //Task500Init();
+  //Task250Init();
+  CommonInit();
 
   vTaskStartScheduler();
 
