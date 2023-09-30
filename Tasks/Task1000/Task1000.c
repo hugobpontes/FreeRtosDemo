@@ -11,12 +11,24 @@
 #include "trice.h"
 #include "timers.h"
 
+#include "Common.h"
+
 static TaskHandle_t hTask1000;
+
+#define WAIT_FOR_BIN_SMPH_1000_TICKS 1500
 
 static void Task1000(void* pvParams){
 	while (1){
-	//	TRICE( ID(4932), "INFO:Task1000 doing stuff\n");
-		vTaskDelay(1000);
+		TRICE( ID(6257), "INFO: Waiting for BinSmph1000 for %d \n",1500);
+        if( xSemaphoreTake( hBinSmph1000, ( TickType_t ) WAIT_FOR_BIN_SMPH_1000_TICKS ) == pdTRUE )
+        {
+        	TRICE( ID(1974), "INFO: Took BinSmph1000, doing stuff \n");
+        	HAL_Delay(5);
+        }
+        else
+        {
+            TRICE( ID(2904), "INFO: Could not take BinSmph1000 in %d \n",WAIT_FOR_BIN_SMPH_1000_TICKS);
+        }
 	}
 
 }

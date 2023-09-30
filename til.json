@@ -23,6 +23,10 @@
 		"Type": "TRICE",
 		"Strg": "Hello from software timer \\n"
 	},
+	"1974": {
+		"Type": "TRICE",
+		"Strg": "INFO: Took BinSmph1000, doing stuff \\n"
+	},
 	"2104": {
 		"Type": "TRICE",
 		"Strg": "Toggling Blue\\n"
@@ -39,6 +43,10 @@
 		"Type": "TRICE",
 		"Strg": "Failed to create task 1000 \\n"
 	},
+	"2904": {
+		"Type": "TRICE",
+		"Strg": "INFO: Could not take BinSmph1000 in %d \\n"
+	},
 	"3170": {
 		"Type": "trice",
 		"Strg": "Toggling Red\\n"
@@ -54,6 +62,10 @@
 	"3269": {
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in\\n"
+	},
+	"3312": {
+		"Type": "TRICE",
+		"Strg": "SIGNAL: Tmr1000 Giving BinSmph1000 \\n"
 	},
 	"3626": {
 		"Type": "TRICE",
@@ -83,6 +95,10 @@
 		"Type": "TRICE_S",
 		"Strg": "SIGNAL: Switching in %s\\n"
 	},
+	"4568": {
+		"Type": "TRICE",
+		"Strg": "Failed to create binary semaphore 1000"
+	},
 	"4677": {
 		"Type": "trice",
 		"Strg": "%Hello: d\\n"
@@ -90,6 +106,10 @@
 	"4714": {
 		"Type": "TRICE",
 		"Strg": "INFO:Task250 doing stuff\\n"
+	},
+	"4812": {
+		"Type": "TRICE",
+		"Strg": "Tmr1000 Giving BinSmph1000 \\n"
 	},
 	"4932": {
 		"Type": "TRICE",
@@ -131,6 +151,10 @@
 		"Type": "TRICE",
 		"Strg": "Failed to create timer 1000 \\n"
 	},
+	"6257": {
+		"Type": "TRICE",
+		"Strg": "INFO: Waiting for BinSmph1000 for %d \\n"
+	},
 	"6429": {
 		"Type": "TRICE_S",
 		"Strg": "SIGNAL: Switching in %s\\n"
@@ -151,6 +175,10 @@
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in %s\\n"
 	},
+	"6699": {
+		"Type": "TRICE",
+		"Strg": "Failed ot create binary semaphore 1000"
+	},
 	"7129": {
 		"Type": "TRICE",
 		"Strg": "Switching in"
@@ -162,5 +190,9 @@
 	"7393": {
 		"Type": "TRICE",
 		"Strg": "INFO:Task500 doing stuff\\n"
+	},
+	"7825": {
+		"Type": "TRICE",
+		"Strg": "INFO: Giving BinSmph1000 \\n"
 	}
 }
