@@ -23,10 +23,10 @@ static void Task250(void* pvParams){
 		TRICE( ID(3799), "INFO: Waiting for Tmr250 flag for %d \n",WAIT_FOR_250_FLAG_TICKS);
 		SetFlags =  xEventGroupWaitBits(hEvGrp250_500,kTmr250EvMsk, pdTRUE,pdTRUE,WAIT_FOR_250_FLAG_TICKS );
 		if (SetFlags & kTmr250EvMsk){
-        	TRICE( ID(7231), "INFO: Received Tmr250 flag, doing stuff \n");
+        	TRICE( ID(7969), "INFO: Received Tmr250 flag, doing stuff \n");
         	HAL_Delay(5);
 		} else {
-            TRICE( ID(5768), "ERROR: Did not receive tm250 flag in %d \n",WAIT_FOR_250_FLAG_TICKS);
+            TRICE( ID(7324), "ERROR: Did not receive tm250 flag in %d \n",WAIT_FOR_250_FLAG_TICKS);
 		}
 	}
 }

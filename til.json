@@ -15,6 +15,10 @@
 		"Type": "TRICE_S",
 		"Strg": "SIGNAL: Switching in %c%c%c%c%c\\n"
 	},
+	"1687": {
+		"Type": "TRICE_S",
+		"Strg": "INFO: Received Tmr250 flag, doing stuff %s \\n"
+	},
 	"1700": {
 		"Type": "trice",
 		"Strg": "Hello from software timer \\n"
@@ -63,6 +67,10 @@
 		"Type": "TRICE",
 		"Strg": "INFO: Could not take BinSmph1000 in %d \\n"
 	},
+	"3085": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Did not receive tm250 flag in %d \\n"
+	},
 	"3170": {
 		"Type": "trice",
 		"Strg": "Toggling Red\\n"
@@ -106,6 +114,10 @@
 	"3799": {
 		"Type": "TRICE",
 		"Strg": "INFO: Waiting for Tmr250 flag for %d \\n"
+	},
+	"3921": {
+		"Type": "TRICE",
+		"Strg": "INFO: Received Tmr250 flag, doing stuff %s \\n"
 	},
 	"3947": {
 		"Type": "TRICE",
@@ -235,6 +247,10 @@
 		"Type": "TRICE",
 		"Strg": "Switching in"
 	},
+	"7152": {
+		"Type": "TRICE_S",
+		"Strg": "ERROR: Did not receive tm250 flag in %d \\n"
+	},
 	"7181": {
 		"Type": "TRICE",
 		"Strg": "Task1000 doing stuff"
@@ -242,6 +258,10 @@
 	"7231": {
 		"Type": "TRICE",
 		"Strg": "INFO: Received Tmr250 flag, doing stuff \\n"
+	},
+	"7324": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Did not receive tm250 flag in %d \\n"
 	},
 	"7393": {
 		"Type": "TRICE",
@@ -254,5 +274,9 @@
 	"7825": {
 		"Type": "TRICE",
 		"Strg": "INFO: Giving BinSmph1000 \\n"
+	},
+	"7969": {
+		"Type": "TRICE",
+		"Strg": "INFO: Received Tmr250 flag, doing stuff \\n"
 	}
 }
