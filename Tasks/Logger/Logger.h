@@ -10,5 +10,6 @@
 
 void LoggerInit();
 extern lwrb_t LogBuffer;
+extern SemaphoreHandle_t hLoggerMutex;
 
 #endif /* LOGGER_LOGGER_H_ */

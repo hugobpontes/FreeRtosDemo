@@ -7,6 +7,10 @@
 		"Type": "trice",
 		"Strg": "\\n\\n        ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨        \\n        🎈🎈🎈🎈  𝕹𝖀𝕮𝕷𝕰𝕺-L432KC   🎈🎈🎈🎈\\n        🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃        \\n\\n\\n"
 	},
+	"1058": {
+		"Type": "TRICE",
+		"Strg": "INFO: Releasing logger mutex \\n"
+	},
 	"1473": {
 		"Type": "TRICE",
 		"Strg": "Before HAL_Delay \\n"
@@ -27,6 +31,10 @@
 		"Type": "TRICE",
 		"Strg": "Failed to start timer 1000 \\n"
 	},
+	"1776": {
+		"Type": "TRICE",
+		"Strg": "INFO: Received Tmr250 flag, waiting for logger mutex for %d \\n"
+	},
 	"1924": {
 		"Type": "TRICE",
 		"Strg": "Hello from software timer \\n"
@@ -34,6 +42,10 @@
 	"1974": {
 		"Type": "TRICE",
 		"Strg": "INFO: Took BinSmph1000, doing stuff \\n"
+	},
+	"2006": {
+		"Type": "TRICE",
+		"Strg": "INFO: Took logger mutex, writing B1B2B3B4B5 \\n"
 	},
 	"2104": {
 		"Type": "TRICE",
@@ -66,6 +78,10 @@
 	"2790": {
 		"Type": "TRICE",
 		"Strg": "Failed to create task 1000 \\n"
+	},
+	"2839": {
+		"Type": "TRICE",
+		"Strg": "INFO: Received Tmr500 flag, waiting for logger mutex for %d \\n"
 	},
 	"2904": {
 		"Type": "TRICE",
@@ -151,6 +167,10 @@
 		"Type": "TRICE",
 		"Strg": "Failed to create binary semaphore 1000"
 	},
+	"4647": {
+		"Type": "TRICE",
+		"Strg": "INFO: Took logger mutex, writing A1A2A3A4 \\n"
+	},
 	"4677": {
 		"Type": "trice",
 		"Strg": "%Hello: d\\n"
@@ -187,6 +207,10 @@
 		"Type": "TRICE",
 		"Strg": "Entering Task [%d]\\n"
 	},
+	"5437": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Did not receive tm250 flag in %d \\n"
+	},
 	"5441": {
 		"Type": "TRICE",
 		"Strg": "Hello from software timer \\n"
@@ -199,9 +223,17 @@
 		"Type": "TRICE",
 		"Strg": "INFO: Toggling Red\\n"
 	},
+	"5747": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Could not take logger mutex in %d \\n"
+	},
 	"5768": {
 		"Type": "TRICE",
 		"Strg": "ERROR: Did not receive tm250 flag in %d \\n"
+	},
+	"5850": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Could not take logger mutex in %d \\n"
 	},
 	"5877": {
 		"Type": "trice",
@@ -218,6 +250,10 @@
 	"6257": {
 		"Type": "TRICE",
 		"Strg": "INFO: Waiting for BinSmph1000 for %d \\n"
+	},
+	"6324": {
+		"Type": "TRICE",
+		"Strg": "INFO: Releasing logger mutex \\n"
 	},
 	"6429": {
 		"Type": "TRICE_S",
@@ -243,6 +279,10 @@
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in %s\\n"
 	},
+	"6661": {
+		"Type": "TRICE",
+		"Strg": "INFO: Waiting for Tmr250 flag for %d \\n"
+	},
 	"6699": {
 		"Type": "TRICE",
 		"Strg": "Failed ot create binary semaphore 1000"
@@ -267,6 +307,10 @@
 		"Type": "TRICE",
 		"Strg": "INFO: Received Tmr250 flag, doing stuff \\n"
 	},
+	"7257": {
+		"Type": "TRICE",
+		"Strg": "INFO: Releasing logger mutex \\n"
+	},
 	"7324": {
 		"Type": "TRICE",
 		"Strg": "ERROR: Did not receive tm250 flag in %d \\n"
@@ -279,9 +323,21 @@
 		"Type": "TRICE",
 		"Strg": "INFO: Did not receive tm250 flag in %d \\n"
 	},
+	"7634": {
+		"Type": "TRICE",
+		"Strg": "INFO: Took BinSmph1000, waiting for logger mutex for %d \\n"
+	},
+	"7736": {
+		"Type": "TRICE",
+		"Strg": "INFO: Took logger mutex, writing C1C2 \\n"
+	},
 	"7825": {
 		"Type": "TRICE",
 		"Strg": "INFO: Giving BinSmph1000 \\n"
+	},
+	"7883": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Could not take logger mutex in %d \\n"
 	},
 	"7969": {
 		"Type": "TRICE",

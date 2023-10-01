@@ -75,7 +75,7 @@ static inline void InitEvGroup(EventGroupHandle_t* phEvGrp,StaticEventGroup_t* p
 }
 
 void CommonInit(){
-	InitAutoTimer(&hTmr1000,&Tmr1000Buff,kTmr1000Ticks,Tmr1000Callback,"Tmr1000");
+	InitAutoTimer(&hTmr1000,&Tmr1000Buff,kTmr1000Ticks+100,Tmr1000Callback,"Tmr1000");
 	InitAutoTimer(&hTmr500,&Tmr500Buff,kTmr500Ticks,Tmr500Callback,"Tmr500");
 	InitAutoTimer(&hTmr250,&Tmr250Buff,kTmr250Ticks,Tmr250Callback,"Tmr250");
 	InitBinSemaphore(&hBinSmph1000,&BinSmph1000Buffer);

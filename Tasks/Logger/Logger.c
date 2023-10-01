@@ -20,6 +20,8 @@ static uint8_t TempLogBuffer[LOG_CHUNK_SIZE];
 static TaskHandle_t hTaskLogger;
 lwrb_t LogBuffer;
 
+SemaphoreHandle_t hLoggerMutex;
+static StaticSemaphore_t LoggerMutexBuffer;
 
 static void TaskLogger(void* pvParams){
 
@@ -35,4 +37,5 @@ static void TaskLogger(void* pvParams){
 void LoggerInit(){
 	lwrb_init(&LogBuffer, LogBufferStorage, LOG_BUFFER_SIZE);
 	xTaskCreate(TaskLogger, "Logger", 128, NULL, 1, &hTaskLogger);
+	hLoggerMutex = xSemaphoreCreateMutexStatic( &LoggerMutexBuffer );
 }

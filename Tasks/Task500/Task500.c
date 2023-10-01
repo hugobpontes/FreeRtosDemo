@@ -10,10 +10,16 @@
 #include "event_groups.h"
 
 #include "trice.h"
+#include "lwrb/lwrb.h"
 
 #include "Common.h"
+#include "Logger.h"
 
 #define WAIT_FOR_500_FLAG_TICKS 600
+#define WAIT_FOR_LOGGER_MUTEX_500_TICKS 100
+#define TASK_500_DATA_SIZE 5
+
+static uint8_t Task500Data[TASK_500_DATA_SIZE] = {0xB1,0xB2,0xB3,0xB4,0xB5};
 
 static TaskHandle_t hTask500;
 
@@ -24,8 +30,16 @@ void Task500(void* pvParams){
 		TRICE( ID(4726), "INFO: Waiting for Tmr500 flag for %d \n",WAIT_FOR_500_FLAG_TICKS);
 		SetFlags =  xEventGroupWaitBits(hEvGrp250_500,kTmr500EvMsk, pdTRUE,pdTRUE,WAIT_FOR_500_FLAG_TICKS );
 		if (SetFlags & kTmr500EvMsk){
-        	TRICE( ID(3296), "INFO: Received Tmr500 flag, doing stuff \n");
-        	HAL_Delay(5);
+        	TRICE( ID(2839), "INFO: Received Tmr500 flag, waiting for logger mutex for %d \n",WAIT_FOR_LOGGER_MUTEX_500_TICKS);
+        	if( xSemaphoreTake( hLoggerMutex, WAIT_FOR_LOGGER_MUTEX_500_TICKS ) == pdTRUE ){
+        	            	TRICE( ID(2006), "INFO: Took logger mutex, writing B1B2B3B4B5 \n");
+        	            	lwrb_write(&LogBuffer, Task500Data, TASK_500_DATA_SIZE);
+        	            	HAL_Delay(150);
+        	            	TRICE( ID(6324), "INFO: Releasing logger mutex \n");
+        	            	xSemaphoreGive(hLoggerMutex);
+			} else {
+				TRICE( ID(5850), "ERROR: Could not take logger mutex in %d \n",WAIT_FOR_LOGGER_MUTEX_500_TICKS);
+			}
 		} else {
             TRICE( ID(2150), "ERROR: Did not receive tm500 flag in %d \n",WAIT_FOR_500_FLAG_TICKS);
 		}
