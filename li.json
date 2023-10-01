@@ -1,15 +1,11 @@
 {
 	"1008": {
 		"File": "Task1000.c",
-		"Line": 30
+		"Line": 35
 	},
 	"1031": {
 		"File": "triceConfig.h",
 		"Line": 102
-	},
-	"1974": {
-		"File": "Task1000.c",
-		"Line": 25
 	},
 	"2150": {
 		"File": "Task500.c",
@@ -23,9 +19,17 @@
 		"File": "Common.c",
 		"Line": 57
 	},
+	"2670": {
+		"File": "Logger.c",
+		"Line": 29
+	},
 	"2790": {
 		"File": "Task1000.c",
-		"Line": 38
+		"Line": 43
+	},
+	"3131": {
+		"File": "Task1000.c",
+		"Line": 30
 	},
 	"3296": {
 		"File": "Task500.c",
@@ -53,7 +57,7 @@
 	},
 	"6257": {
 		"File": "Task1000.c",
-		"Line": 22
+		"Line": 27
 	},
 	"6568": {
 		"File": "Common.c",

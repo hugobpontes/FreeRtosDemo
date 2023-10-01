@@ -13,15 +13,21 @@
 #include "Common.h"
 
 #define LOG_BUFFER_SIZE 256
+#define LOG_CHUNK_SIZE 1
 
 static uint8_t LogBufferStorage[LOG_BUFFER_SIZE];
+static uint8_t TempLogBuffer[LOG_CHUNK_SIZE];
 static TaskHandle_t hTaskLogger;
 lwrb_t LogBuffer;
 
 
 static void TaskLogger(void* pvParams){
-	while (1){
 
+	while (1){
+		while(lwrb_get_full(&LogBuffer)>=LOG_CHUNK_SIZE){
+			lwrb_read(&LogBuffer, TempLogBuffer,LOG_CHUNK_SIZE);
+			TRICE( ID(2670), "RECEIVE: Logger read 0x%.2x from Log Buffer \n",TempLogBuffer[0]);
+		}
 	}
 }
 

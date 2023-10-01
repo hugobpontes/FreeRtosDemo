@@ -66,6 +66,7 @@ int main(void)
   Task1000Init();
   Task500Init();
   Task250Init();
+  LoggerInit();
   CommonInit();
 
   vTaskStartScheduler();

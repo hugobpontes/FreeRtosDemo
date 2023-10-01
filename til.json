@@ -55,6 +55,10 @@
 		"Type": "TRICE",
 		"Strg": "SIGNAL: Switching in\\n"
 	},
+	"2670": {
+		"Type": "TRICE",
+		"Strg": "RECEIVE: Logger read 0x%.2x from Log Buffer \\n"
+	},
 	"2728": {
 		"Type": "TRICE",
 		"Strg": "Failed to create timer for task 1000 \\n"
@@ -70,6 +74,10 @@
 	"3085": {
 		"Type": "TRICE",
 		"Strg": "ERROR: Did not receive tm250 flag in %d \\n"
+	},
+	"3131": {
+		"Type": "TRICE",
+		"Strg": "INFO: Took BinSmph1000, writing A1A2A3A4 in buffer \\n"
 	},
 	"3170": {
 		"Type": "trice",
