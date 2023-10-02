@@ -75,6 +75,7 @@ static inline void InitEvGroup(EventGroupHandle_t* phEvGrp,StaticEventGroup_t* p
 }
 
 void CommonInit(){
+	//adding 100 to task1000 causes more interesting outputs due different order of tasks running
 	InitAutoTimer(&hTmr1000,&Tmr1000Buff,kTmr1000Ticks+100,Tmr1000Callback,"Tmr1000");
 	InitAutoTimer(&hTmr500,&Tmr500Buff,kTmr500Ticks,Tmr500Callback,"Tmr500");
 	InitAutoTimer(&hTmr250,&Tmr250Buff,kTmr250Ticks,Tmr250Callback,"Tmr250");

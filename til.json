@@ -75,6 +75,10 @@
 		"Type": "TRICE",
 		"Strg": "Failed to create timer for task 1000 \\n"
 	},
+	"2785": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Could not post msg to logger inbox \\n"
+	},
 	"2790": {
 		"Type": "TRICE",
 		"Strg": "Failed to create task 1000 \\n"
@@ -190,6 +194,10 @@
 	"4932": {
 		"Type": "TRICE",
 		"Strg": "INFO:Task1000 doing stuff\\n"
+	},
+	"5024": {
+		"Type": "TRICE",
+		"Strg": "RECEIVE: BYTE 0x%.2x \\n"
 	},
 	"5150": {
 		"Type": "TRICE32",
@@ -319,6 +327,10 @@
 		"Type": "TRICE",
 		"Strg": "INFO:Task500 doing stuff\\n"
 	},
+	"7470": {
+		"Type": "TRICE",
+		"Strg": "RECEIVE: Task %d wants me to read %d bytes from log buffer \\n"
+	},
 	"7623": {
 		"Type": "TRICE",
 		"Strg": "INFO: Did not receive tm250 flag in %d \\n"
@@ -331,9 +343,17 @@
 		"Type": "TRICE",
 		"Strg": "INFO: Took logger mutex, writing C1C2 \\n"
 	},
+	"7794": {
+		"Type": "TRICE",
+		"Strg": "ERROR: Could not post msg to logger inbox \\n"
+	},
 	"7825": {
 		"Type": "TRICE",
 		"Strg": "INFO: Giving BinSmph1000 \\n"
+	},
+	"7860": {
+		"Type": "TRICE",
+		"Strg": "INFO: Took logger mutex, writing A1A2A3A4 and posting msg \\n"
 	},
 	"7883": {
 		"Type": "TRICE",

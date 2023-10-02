@@ -25,7 +25,12 @@ static TaskHandle_t hTask500;
 
 
 void Task500(void* pvParams){
+
 	EventBits_t SetFlags;
+	LoggerMsg_t Task500Msg;
+	Task500Msg.SenderId = 5;
+	Task500Msg.Size = TASK_500_DATA_SIZE;
+
 	while (1){
 		TRICE( ID(4726), "INFO: Waiting for Tmr500 flag for %d \n",WAIT_FOR_500_FLAG_TICKS);
 		SetFlags =  xEventGroupWaitBits(hEvGrp250_500,kTmr500EvMsk, pdTRUE,pdTRUE,WAIT_FOR_500_FLAG_TICKS );
@@ -35,6 +40,9 @@ void Task500(void* pvParams){
         	            	TRICE( ID(2006), "INFO: Took logger mutex, writing B1B2B3B4B5 \n");
         	            	lwrb_write(&LogBuffer, Task500Data, TASK_500_DATA_SIZE);
         	            	HAL_Delay(150);
+        	            	if (xQueueSend(hLoggerInbox,&Task500Msg,0) == pdFALSE){
+        	            		 TRICE( ID(2785), "ERROR: Could not post msg to logger inbox \n");
+        	            	}
         	            	TRICE( ID(6324), "INFO: Releasing logger mutex \n");
         	            	xSemaphoreGive(hLoggerMutex);
 			} else {
@@ -49,5 +57,5 @@ void Task500(void* pvParams){
 
 
 void Task500Init(){
-	xTaskCreate(Task500, "Task500", 128, NULL, 3, &hTask500);
+	xTaskCreate(Task500, "Task500", 128, NULL, 4, &hTask500);
 }

@@ -25,7 +25,12 @@ static TaskHandle_t hTask250;
 
 
 void Task250(void* pvParams){
+
 	EventBits_t SetFlags;
+	LoggerMsg_t Task250Msg;
+	Task250Msg.SenderId = 25;
+	Task250Msg.Size = TASK_250_DATA_SIZE;
+
 	while (1){
 		TRICE( ID(6661), "INFO: Waiting for Tmr250 flag for %d \n",WAIT_FOR_250_FLAG_TICKS);
 		SetFlags =  xEventGroupWaitBits(hEvGrp250_500,kTmr250EvMsk, pdTRUE,pdTRUE,WAIT_FOR_250_FLAG_TICKS );
@@ -35,6 +40,9 @@ void Task250(void* pvParams){
         	            	TRICE( ID(7736), "INFO: Took logger mutex, writing C1C2 \n");
         	            	lwrb_write(&LogBuffer, Task250Data, TASK_250_DATA_SIZE);
         	            	HAL_Delay(150);
+        	            	if (xQueueSend(hLoggerInbox,&Task250Msg,0) == pdFALSE){
+        	            		 TRICE( ID(2785), "ERROR: Could not post msg to logger inbox \n");
+        	            	}
         	            	TRICE( ID(1058), "INFO: Releasing logger mutex \n");
         	            	xSemaphoreGive(hLoggerMutex);
 			} else {
@@ -50,5 +58,5 @@ void Task250(void* pvParams){
 
 
 void Task250Init(){
-	xTaskCreate(Task250, "Task250", 128, NULL, 2, &hTask250);
+	xTaskCreate(Task250, "Task250", 128, NULL, 3, &hTask250);
 }

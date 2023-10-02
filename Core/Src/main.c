@@ -27,6 +27,7 @@
 #include "Trace.h"
 
 #include "Common.h"
+#include "Logger.h"
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);

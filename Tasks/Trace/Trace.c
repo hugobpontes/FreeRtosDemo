@@ -19,7 +19,6 @@ static void TaskTrace(void* pvParams){
 		if (TriceOutDepthUartA()){
 			triceServeTransmitUartA();
 		}
-		//HAL_Delay(1);
 	}
 }
 

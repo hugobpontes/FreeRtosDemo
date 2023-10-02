@@ -1,7 +1,7 @@
 {
 	"1008": {
 		"File": "Task1000.c",
-		"Line": 43
+		"Line": 52
 	},
 	"1031": {
 		"File": "triceConfig.h",
@@ -17,11 +17,11 @@
 	},
 	"2006": {
 		"File": "Task500.c",
-		"Line": 35
+		"Line": 40
 	},
 	"2150": {
 		"File": "Task500.c",
-		"Line": 44
+		"Line": 52
 	},
 	"2352": {
 		"File": "Common.c",
@@ -31,17 +31,17 @@
 		"File": "Common.c",
 		"Line": 57
 	},
-	"2670": {
-		"File": "Logger.c",
-		"Line": 31
+	"2785": {
+		"File": "Task500.c",
+		"Line": 44
 	},
 	"2790": {
 		"File": "Task1000.c",
-		"Line": 51
+		"Line": 60
 	},
 	"2839": {
 		"File": "Task500.c",
-		"Line": 33
+		"Line": 38
 	},
 	"3312": {
 		"File": "Common.c",
@@ -51,13 +51,13 @@
 		"File": "Common.c",
 		"Line": 41
 	},
-	"4647": {
-		"File": "Task1000.c",
-		"Line": 33
-	},
 	"4726": {
 		"File": "Task500.c",
-		"Line": 30
+		"Line": 35
+	},
+	"5024": {
+		"File": "Logger.c",
+		"Line": 44
 	},
 	"5437": {
 		"File": "Task250.c",
@@ -69,7 +69,7 @@
 	},
 	"5850": {
 		"File": "Task500.c",
-		"Line": 41
+		"Line": 49
 	},
 	"6178": {
 		"File": "Common.c",
@@ -77,11 +77,11 @@
 	},
 	"6257": {
 		"File": "Task1000.c",
-		"Line": 28
+		"Line": 34
 	},
 	"6324": {
 		"File": "Task500.c",
-		"Line": 38
+		"Line": 46
 	},
 	"6568": {
 		"File": "Common.c",
@@ -97,18 +97,30 @@
 	},
 	"7257": {
 		"File": "Task1000.c",
-		"Line": 35
+		"Line": 44
+	},
+	"7470": {
+		"File": "Logger.c",
+		"Line": 41
 	},
 	"7634": {
 		"File": "Task1000.c",
-		"Line": 31
+		"Line": 37
 	},
 	"7736": {
 		"File": "Task250.c",
 		"Line": 35
 	},
+	"7794": {
+		"File": "Task1000.c",
+		"Line": 42
+	},
+	"7860": {
+		"File": "Task1000.c",
+		"Line": 39
+	},
 	"7883": {
 		"File": "Task1000.c",
-		"Line": 38
+		"Line": 47
 	}
 }
